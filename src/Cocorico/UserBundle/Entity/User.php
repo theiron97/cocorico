@@ -462,6 +462,15 @@ class User extends BaseUser implements ParticipantInterface
     private $cards;
 
     /**
+     * @ORM\OneToMany(targetEntity="Cocorico\CoreBundle\Entity\Product", mappedBy="user")
+     */
+    private $products;
+
+    /**
+     * 
+     */
+
+    /**
      * Constructor.
      */
     public function __construct()
@@ -481,6 +490,7 @@ class User extends BaseUser implements ParticipantInterface
         $this->bookingDepositRefundsAsAsker = new ArrayCollection();
         $this->bookingDepositRefundsAsOfferer = new ArrayCollection();
         $this->cards = new ArrayCollection();
+        $this->products = new ArrayCollection();
         parent::__construct();
     }
 
@@ -1753,5 +1763,197 @@ class User extends BaseUser implements ParticipantInterface
     public function getImpersonating()
     {
         return $this;
+    }
+
+    /**
+     * Add message.
+     *
+     * @param \Cocorico\MessageBundle\Entity\Message $message
+     *
+     * @return User
+     */
+    public function addMessage(\Cocorico\MessageBundle\Entity\Message $message)
+    {
+        $this->messages[] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Remove message.
+     *
+     * @param \Cocorico\MessageBundle\Entity\Message $message
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeMessage(\Cocorico\MessageBundle\Entity\Message $message)
+    {
+        return $this->messages->removeElement($message);
+    }
+
+    /**
+     * Add reviewsBy.
+     *
+     * @param \Cocorico\ReviewBundle\Entity\Review $reviewsBy
+     *
+     * @return User
+     */
+    public function addReviewsBy(\Cocorico\ReviewBundle\Entity\Review $reviewsBy)
+    {
+        $this->reviewsBy[] = $reviewsBy;
+
+        return $this;
+    }
+
+    /**
+     * Remove reviewsBy.
+     *
+     * @param \Cocorico\ReviewBundle\Entity\Review $reviewsBy
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeReviewsBy(\Cocorico\ReviewBundle\Entity\Review $reviewsBy)
+    {
+        return $this->reviewsBy->removeElement($reviewsBy);
+    }
+
+    /**
+     * Add reviewsTo.
+     *
+     * @param \Cocorico\ReviewBundle\Entity\Review $reviewsTo
+     *
+     * @return User
+     */
+    public function addReviewsTo(\Cocorico\ReviewBundle\Entity\Review $reviewsTo)
+    {
+        $this->reviewsTo[] = $reviewsTo;
+
+        return $this;
+    }
+
+    /**
+     * Remove reviewsTo.
+     *
+     * @param \Cocorico\ReviewBundle\Entity\Review $reviewsTo
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeReviewsTo(\Cocorico\ReviewBundle\Entity\Review $reviewsTo)
+    {
+        return $this->reviewsTo->removeElement($reviewsTo);
+    }
+
+    /**
+     * Add booking.
+     *
+     * @param \Cocorico\CoreBundle\Entity\Booking $booking
+     *
+     * @return User
+     */
+    public function addBooking(\Cocorico\CoreBundle\Entity\Booking $booking)
+    {
+        $this->bookings[] = $booking;
+
+        return $this;
+    }
+
+    /**
+     * Remove booking.
+     *
+     * @param \Cocorico\CoreBundle\Entity\Booking $booking
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeBooking(\Cocorico\CoreBundle\Entity\Booking $booking)
+    {
+        return $this->bookings->removeElement($booking);
+    }
+
+    /**
+     * Add bookingBankWire.
+     *
+     * @param \Cocorico\CoreBundle\Entity\BookingBankWire $bookingBankWire
+     *
+     * @return User
+     */
+    public function addBookingBankWire(\Cocorico\CoreBundle\Entity\BookingBankWire $bookingBankWire)
+    {
+        $this->bookingBankWires[] = $bookingBankWire;
+
+        return $this;
+    }
+
+    /**
+     * Remove bookingBankWire.
+     *
+     * @param \Cocorico\CoreBundle\Entity\BookingBankWire $bookingBankWire
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeBookingBankWire(\Cocorico\CoreBundle\Entity\BookingBankWire $bookingBankWire)
+    {
+        return $this->bookingBankWires->removeElement($bookingBankWire);
+    }
+
+    /**
+     * Add bookingPayinRefund.
+     *
+     * @param \Cocorico\CoreBundle\Entity\BookingPayinRefund $bookingPayinRefund
+     *
+     * @return User
+     */
+    public function addBookingPayinRefund(\Cocorico\CoreBundle\Entity\BookingPayinRefund $bookingPayinRefund)
+    {
+        $this->bookingPayinRefunds[] = $bookingPayinRefund;
+
+        return $this;
+    }
+
+    /**
+     * Remove bookingPayinRefund.
+     *
+     * @param \Cocorico\CoreBundle\Entity\BookingPayinRefund $bookingPayinRefund
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeBookingPayinRefund(\Cocorico\CoreBundle\Entity\BookingPayinRefund $bookingPayinRefund)
+    {
+        return $this->bookingPayinRefunds->removeElement($bookingPayinRefund);
+    }
+
+    /**
+     * Add product.
+     *
+     * @param \Cocorico\CoreBundle\Entity\Product $product
+     *
+     * @return User
+     */
+    public function addProduct(\Cocorico\CoreBundle\Entity\Product $product)
+    {
+        $this->products[] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Remove product.
+     *
+     * @param \Cocorico\CoreBundle\Entity\Product $product
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeProduct(\Cocorico\CoreBundle\Entity\Product $product)
+    {
+        return $this->products->removeElement($product);
+    }
+
+    /**
+     * Get products.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProducts()
+    {
+        return $this->products;
     }
 }

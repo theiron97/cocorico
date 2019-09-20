@@ -146,4 +146,18 @@ class ListingController extends Controller
 
         return false;
     }
+
+
+    /**
+     * @Route("/explore")
+     */
+    public function showProduct(){
+
+        $products = $this->getDoctrine()
+            -> getRepository(Listing::class)
+            -> getAllListings(); 
+            
+        return $this->render('CocoricoCoreBundle:Frontend/Listing:showproducts.html.twig'
+                , array('products'=>$products));
+    }
 }

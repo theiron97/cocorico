@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block layout %}
+    {% embed '@CocoricoCore/Frontend/layout.html.twig' %}
+
+        {% trans_default_domain 'cocorico_user' %}
+
+        {% block main %}
+            <div class="col-xs-12">
+                {% include 'CocoricoCoreBundle:Frontend/Common:_flash.html.twig' %}
+                
+                <table class="table">
+                    <tr>
+                        <th> Title </th>
+                        <th> Description </th>
+                    </tr>
+                    {% for x in products %}
+                    <tr>
+                        <td>{{x.title}}</td>
+                        <td>{{x.description}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endblock %}
+
+    {% endembed %}
+{% endblock layout %}

@@ -91,3 +91,5 @@ security:
         - { path: ^/(%cocorico.locales_string%)/(dashboard|tableau-de-bord)/, role: IS_AUTHENTICATED_FULLY }
 
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        #Checker
+        - {path: ^/verify, role: [ROLE_CHECKER]}

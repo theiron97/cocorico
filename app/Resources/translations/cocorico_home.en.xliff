@@ -21,7 +21,7 @@
       </trans-unit>
       <trans-unit id="3af93b9b8cfe074ceff3fff27255261635f40424" resname="home.subinfo.desc1">
         <source>home.subinfo.desc1</source>
-        <target>You will find a link to several test payment card numbers in the payment page.</target>
+        <target>Khám phá tất các các loại sản phẩm nông nghiệp trên websites.</target>
       </trans-unit>
       <trans-unit id="908e5b384bbeb42623be6a1743cf010dc3b48483" resname="home.subinfo.desc2">
         <source>home.subinfo.desc2</source>
@@ -35,7 +35,7 @@
       </trans-unit>
       <trans-unit id="4c15d8bf2bdf8150e45e9f30b559ea8565a47042" resname="home.subinfo.title1">
         <source>home.subinfo.title1</source>
-        <target>Freely test payments with test card numbers</target>
+        <target>Khám phá sản phẩm</target>
       </trans-unit>
       <trans-unit id="28172413ec09c98bffa9f072e9bd873932e70145" resname="home.subinfo.title2">
         <source>home.subinfo.title2</source>

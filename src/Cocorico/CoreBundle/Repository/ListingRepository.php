@@ -19,6 +19,19 @@ use Doctrine\ORM\Query;
 
 class ListingRepository extends EntityRepository
 {
+
+    public function getAllListings(){
+
+        return $this->_em->createQueryBuilder()
+            // ->select("partial l.{id, price, createdAt}")
+            // ->addSelect("partial t.{id, title, description}")
+            ->select("l.id as lid, l.price, l.createdAt")
+            ->addSelect('t.id, t.title, t.description')
+            ->from('CocoricoCoreBundle:Listing', 'l')
+            ->leftJoin('l.translations', 't')
+            ->getQuery()
+            ->getResult();
+    }
     /**
      *
      * @return \Doctrine\ORM\QueryBuilder

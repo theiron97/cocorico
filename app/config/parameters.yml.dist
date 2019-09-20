@@ -1,9 +1,9 @@
 parameters:
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     cocorico_dev
+    database_name:     cocodb
     database_user:     cocorico_dev
-    database_password: cocorico_dev
+    database_password: 123456
 
     #MongoDB
     mongodb_server: mongodb://localhost:27017
@@ -43,8 +43,8 @@ parameters:
     cocorico.translator.secret.key: ~
 
     #Facebook
-    cocorico.facebook.app_id: ~
-    cocorico.facebook.secret: ~
+    cocorico.facebook.app_id: 642772552893032
+    cocorico.facebook.secret: 191c4ea15235f10f3fa520b8395b531a
 
     #Image processing driver (liip_imagine_bundle): (gd, imagick, gmagick)
     cocorico.image_driver: imagick
